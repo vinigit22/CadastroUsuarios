@@ -1,4 +1,4 @@
-package dev.java10x.cadastrdeninja;
+package dev.java10x.cadastrdeninja.Usuario;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

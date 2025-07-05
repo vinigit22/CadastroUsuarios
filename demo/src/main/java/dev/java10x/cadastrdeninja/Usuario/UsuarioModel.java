@@ -1,7 +1,10 @@
-package dev.java10x.cadastrdeninja;
+package dev.java10x.cadastrdeninja.Usuario;
 
 
+import dev.java10x.cadastrdeninja.Usuario.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 // o Entity tranforma uma classe em uma entidade no banco dados
 @Entity
@@ -9,12 +12,17 @@ import jakarta.persistence.*;
 public class UsuarioModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
-    String nome;
-    String email;
-    int idade;
+    private long id;
+    private String nome;
+    private String email;
+    private int idade;
+
+    // @ManytoOne um usuario tem uma unica missao
+    @ManyToOne
+    private MissoesModel  missoes;
 
     public UsuarioModel() {
+
     }
 
     public UsuarioModel(String nome, String email, int idade) {
